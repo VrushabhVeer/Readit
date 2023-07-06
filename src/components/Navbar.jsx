@@ -57,10 +57,16 @@ export default function Navbar() {
             <Link to="/blogs">
               <Text>Blogs</Text>
             </Link>
-            <Link to="/create">
-              <Text>Create Blog</Text>
+            <Link to="/myblogs">
+              <Text>My Blogs</Text>
             </Link>
-            <Text>Contact</Text>
+            <Link to="/create">
+              <Text>Create</Text>
+            </Link>
+
+            <Link to="/contact">
+              <Text>Contact</Text>
+            </Link>
           </HStack>
 
           <Link to="/login" color="#333d4a">
@@ -77,14 +83,18 @@ export default function Navbar() {
               ml="4"
               color="#333d4a"
             >
-              <Text>Home</Text>
               <Link to="/blogs">
-                <Text>Blog</Text>
+                <Text>Blogs</Text>
+              </Link>
+              <Link to="/myblogs">
+                <Text>My Blogs</Text>
               </Link>
               <Link to="/create">
-                <Text>Create Blog</Text>
+                <Text>Create</Text>
               </Link>
-              <Text>Contact</Text>
+              <Link to="/contact">
+                <Text>Contact</Text>
+              </Link>
             </Stack>
           </Box>
         ) : null}

@@ -4,18 +4,39 @@ import Home from "../pages/Home";
 import CreateBlogs from "../pages/CreateBlogs";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import Blogs from "../pages/Blogs";
+import Myblogs from "../pages/Myblogs";
+import PrivateRoutes from "./PrivateRoutes";
+import Contact from "../pages/Contact";
+import AllBlogs from "../pages/AllBlogs";
 
 const AllRoutes = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/create" element={<CreateBlogs />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route
+        path="/myblogs"
+        element={
+          <PrivateRoutes>
+            <Myblogs />
+          </PrivateRoutes>
+        }
+      />
+
+      <Route
+        path="/create"
+        element={
+          <PrivateRoutes>
+            <CreateBlogs />
+          </PrivateRoutes>
+        }
+      />
+      <Route path="/blogs" element={<AllBlogs />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  );
 };
 
 export default AllRoutes;
