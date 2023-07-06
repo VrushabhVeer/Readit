@@ -41,7 +41,7 @@ The Readit blog application is designed to allow users to create and manage thei
 ## Url
 Open your browser and visit https://readit-blogs.netlify.app/ to access the application.
 
-
+## Preview
 ![readit](https://github.com/VrushabhVeer/Readit/assets/99570200/07ad4797-70cd-47f9-a654-4040d21cfae9)
 
 
