@@ -1,45 +1,67 @@
 # Readit
 
-The Readit blog application is designed to allow users to create and manage their own blog posts. It provides a clean and intuitive user interface for an enhanced user experience. The application is built with simplicity and minimalism in mind, ensuring that users can focus on creating and sharing their thoughts and ideas without any distractions.
+The Readit blog application is designed to allow users to create and manage their own blog posts. It provides a clean and intuitive user interface for an enhanced user experience. The application is built with simplicity and minimalism in mind, ensuring that users can focus on creating and sharing their thoughts and ideas without any distractions. Readit is a full-stack blog application that allows you to write, delete, update, and publish your own blogs.
 
-## Table of Contents
+[![Website](https://img.shields.io/badge/website-live-brightgreen)](https://readit-blogs.netlify.app)
+[![Frontend Repo](https://img.shields.io/badge/frontend-repo-blue)](https://github.com/VrushabhVeer/Readit)
+[![Backend Repo](https://img.shields.io/badge/backend-repo-blue)](https://github.com/VrushabhVeer/Readit-backend)
 
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Url](#url)
+## Technologies Used
 
-## Technologies
+### Frontend
+- React
+- JavaScript
+- HTML
+- CSS
+- UI library: Chakra UI
 
-- Frontend:
-  - React
-  - JavaScript
-  - HTML
-  - CSS
-  - Chakra UI (UI library)
+### Backend
+- MongoDB
+- Express
+- Mongoose
 
-- Backend:
-  - MongoDB
-  - Express
-  - Mongoose
+## Getting Started
 
-## Installation
+To get a local copy of the project up and running, follow these steps:
 
-1. Clone the repository:
-
-   ```bash
+1. Clone the frontend repository:
+   ```shell
    git clone https://github.com/VrushabhVeer/Readit.git
 
-2. Install the dependencies:
+2. Clone the backend repository:
+   ```shell
+   git clone https://github.com/VrushabhVeer/Readit-backend.git
+   ```
 
-   ```bash
+3. Install the dependencies for the frontend:
+   ```shell
+   cd Readit
    npm install
+   ```
 
-## Usage
-    npm start
-  
-## Url
-Open your browser and visit https://readit-blogs.netlify.app/ to access the application.
+4. Install the dependencies for the backend:
+   ```shell
+   cd Readit-backend
+   npm install
+   ```
+
+5. Start the frontend development server:
+   ```shell
+   npm start
+   ```
+
+6. Start the backend server:
+   ```shell
+   npm run start
+   ```
+
+7. Open your web browser and visit `http://localhost:3000` to view the application.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to contribute to the project, please feel free to submit a pull request.
+
+
 
 ## Preview
 ![readit](https://github.com/VrushabhVeer/Readit/assets/99570200/07ad4797-70cd-47f9-a654-4040d21cfae9)
