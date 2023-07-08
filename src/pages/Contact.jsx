@@ -44,7 +44,7 @@ const Contact = () => {
         flexDirection={{ base: "column-reverse", md: "row" }}
       >
         <Box w="100%">
-          <Image src={mail} alt="mail" />
+          <Image src={mail} alt="mail" loading="lazy" />
         </Box>
         <Box w="100%">
           <Box>
