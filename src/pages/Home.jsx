@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Input,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import blogging from "../assets/writing-pana.png";
@@ -18,7 +11,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://nice-pink-eagle-robe.cyclic.app/blogs"
+          "https://sleepy-calf-panama-hat.cyclic.app/blogs"
         );
         setData(response.data);
       } catch (error) {
@@ -110,15 +103,17 @@ const Home = () => {
                   <Text mt="4" color="grey">
                     {item.intro}
                   </Text>
-                  <Text
-                    mt="4"
-                    cursor="pointer"
-                    fontStyle="italic"
-                    color="grey"
-                    textDecoration="underline"
-                  >
-                    Read More
-                  </Text>
+                  <Link to={`/blogs/${item._id}`}>
+                    <Text
+                      mt="4"
+                      cursor="pointer"
+                      fontStyle="italic"
+                      color="grey"
+                      textDecoration="underline"
+                    >
+                      Read More
+                    </Text>
+                  </Link>
                   <Flex
                     mt="4"
                     gap="5"
@@ -128,7 +123,7 @@ const Home = () => {
                     color="grey"
                   >
                     <Box>
-                      <i className="fa-solid fa-user"></i> John Rolex
+                      <i className="fa-solid fa-user"></i> {item.userName}
                     </Box>
                     <Box>{item.date}</Box>
                     <Box>
@@ -137,7 +132,8 @@ const Home = () => {
                   </Flex>
                 </Box>
               </Flex>
-            ))}
+            )
+        )}
       </Box>
 
       <Link to="/blogs">

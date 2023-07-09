@@ -29,14 +29,22 @@ const Login = () => {
     console.log(payload);
 
     axios
-      .post("https://nice-pink-eagle-robe.cyclic.app/user/login", payload, {
+      .post("https://sleepy-calf-panama-hat.cyclic.app/user/login", payload, {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        console.log(res.data.token);
+        localStorage.setItem("userName", res.data.userName);
+
+        toast({
+          title: "Login Succesful",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+
         navigate("/");
       })
       .catch((error) => {

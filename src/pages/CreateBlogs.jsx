@@ -17,10 +17,11 @@ const CreateBlogs = () => {
       intro,
       description,
       date,
+      userName:localStorage.getItem("userName"),
     };
     console.log(payload);
 
-    const url = "https://nice-pink-eagle-robe.cyclic.app/blogs/create";
+    const url = "https://sleepy-calf-panama-hat.cyclic.app/blogs/create";
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -83,6 +84,7 @@ const CreateBlogs = () => {
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="blog intro"
+            maxLength="400"
             type="text"
             onChange={(e) => setIntro(e.target.value)}
           />

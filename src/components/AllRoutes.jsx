@@ -8,6 +8,7 @@ import Myblogs from "../pages/Myblogs";
 import PrivateRoutes from "./PrivateRoutes";
 import Contact from "../pages/Contact";
 import AllBlogs from "../pages/AllBlogs";
+import SingleBlog from "../pages/SingleBlog";
 
 const AllRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const AllRoutes = () => {
         }
       />
       <Route path="/blogs" element={<AllBlogs />} />
+      <Route path="/blogs/:blogId" element={<SingleBlog />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/contact" element={<Contact />} />

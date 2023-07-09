@@ -7,13 +7,16 @@ const Myblogs = () => {
 
   useEffect(() => {
     axios
-      .get("https://nice-pink-eagle-robe.cyclic.app/blogs/myblogs", {
+      .get("https://sleepy-calf-panama-hat.cyclic.app/blogs/myblogs", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => res.data)
       .then((res) => {
         setBlogs(res);
-      });
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
   }, []);
 
   return (
@@ -72,11 +75,11 @@ const Myblogs = () => {
               color="grey"
             >
               <Box>
-                <i className="fa-solid fa-user"></i> John Rolex
+                <i className="fa-solid fa-user"></i> {item.userName}
               </Box>
               <Box>{item.date}</Box>
               <Box>
-              <i className="fa-solid fa-pen"></i> Edit
+                <i className="fa-solid fa-pen"></i> Edit
               </Box>
             </Flex>
           </Box>

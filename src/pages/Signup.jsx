@@ -27,7 +27,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://nice-pink-eagle-robe.cyclic.app/user/signup",
+        "https://sleepy-calf-panama-hat.cyclic.app/user/signup",
         data
       );
       navigate("/login");

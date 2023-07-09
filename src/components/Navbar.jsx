@@ -6,12 +6,28 @@ import {
   Text,
   useDisclosure,
   Stack,
+  Menu,
+  MenuButton,
+  Avatar,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  Button,
+  Center,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import user from "../assets/user.png";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleLogout = () => {
+    localStorage.setItem("token", "");
+    localStorage.setItem("userName", "");
+  };
+  
+  let userName = localStorage.getItem("userName");
 
   return (
     <>
@@ -24,7 +40,7 @@ export default function Navbar() {
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={"md"}
+            size={"lg"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
@@ -37,7 +53,7 @@ export default function Navbar() {
             <Link to="/">
               <Text
                 color="#333d4a"
-                fontSize={{ base: "20px", md: "23px" }}
+                fontSize={{ base: "20px", md: "24px" }}
                 fontWeight="bold"
               >
                 Read<span className="it">it.</span>
@@ -69,9 +85,36 @@ export default function Navbar() {
             </Link>
           </HStack>
 
-          <Link to="/login" color="#333d4a">
-            <Text>Login</Text>
-          </Link>
+          <HStack spacing={5}>
+            <Link to="/login" color="#333d4a">
+              <Text display={{ base: "none", md: "flex" }}>Login</Text>
+            </Link>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                minW={0}
+              >
+                <Avatar size={"sm"} src={user} />
+              </MenuButton>
+              <MenuList>
+                <Center>
+                  <Text>{localStorage.getItem("userName") ? userName : "Username"}</Text>
+                </Center>
+                <MenuDivider />
+                <Link to="/myblogs">
+                  <MenuItem>Your Blogs</MenuItem>
+                </Link>
+                <Link to="/login">
+                  <MenuItem onClick={handleLogout}>
+                    {localStorage.getItem("token") ? "Logout" : "Login"}
+                  </MenuItem>
+                </Link>
+              </MenuList>
+            </Menu>
+          </HStack>
         </Flex>
 
         {isOpen ? (
@@ -94,6 +137,9 @@ export default function Navbar() {
               </Link>
               <Link to="/contact">
                 <Text>Contact</Text>
+              </Link>
+              <Link to="/login">
+                <Text>Login</Text>
               </Link>
             </Stack>
           </Box>

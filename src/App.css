@@ -21,6 +21,12 @@
   z-index: 900;
 }
 
+.description::first-letter {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
 /* button 86 */
 .button-86 {
   all: unset;
