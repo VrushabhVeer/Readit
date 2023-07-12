@@ -4,7 +4,7 @@ The Readit blog application is designed to allow users to create and manage thei
 
 [![Website](https://img.shields.io/badge/website-live-brightgreen)](https://readit-blogs.netlify.app)
 [![Frontend Repo](https://img.shields.io/badge/frontend-repo-blue)](https://github.com/VrushabhVeer/Readit)
-[![Backend Repo](https://img.shields.io/badge/backend-repo-blue)](https://github.com/VrushabhVeer/Readit-backend)
+[![Backend Repo](https://img.shields.io/badge/backend-repo-blue)](https://github.com/VrushabhVeer/Readit-db)
 
 ## Technologies Used
 
@@ -30,7 +30,7 @@ To get a local copy of the project up and running, follow these steps:
 
 2. Clone the backend repository:
    ```shell
-   git clone https://github.com/VrushabhVeer/Readit-backend.git
+   git clone https://github.com/VrushabhVeer/Readit-db.git
    ```
 
 3. Install the dependencies for the frontend:
