@@ -30,7 +30,7 @@ To get a local copy of the project up and running, follow these steps:
 
 2. Clone the backend repository:
    ```shell
-   git clone https://github.com/VrushabhVeer/Readit-backend.git
+   git clone https://github.com/VrushabhVeer/Readit-db.git
    ```
 
 3. Install the dependencies for the frontend:
