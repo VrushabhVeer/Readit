@@ -64,12 +64,13 @@ Contributions are welcome! If you find any issues or want to contribute to the p
 
 
 ## Preview
-![readit](https://github.com/VrushabhVeer/Readit/assets/99570200/07ad4797-70cd-47f9-a654-4040d21cfae9)
+![readit-hero](https://github.com/VrushabhVeer/Readit/assets/99570200/71dcbac4-f8e3-45b9-bd56-f7780269e357)
+
 
 
 | Blogs Page            | Create Page              |
 | ---------------------- | ---------------------- |
-| ![readit2](https://github.com/VrushabhVeer/Readit/assets/99570200/700fd387-d439-426f-8308-aa0db8faceca) | ![readit1](https://github.com/VrushabhVeer/Readit/assets/99570200/14d90091-f9fb-407a-b6e8-e403e616d8f9) |
+| ![readit1](https://github.com/VrushabhVeer/Readit/assets/99570200/76cf665c-3d11-47ef-9f65-77ac5bc54907) | ![readit2](https://github.com/VrushabhVeer/Readit/assets/99570200/d06d28f8-d4fe-425d-9421-395e13ddcc75) |
 
 
 
