@@ -4,7 +4,7 @@ The Readit blog application is designed to allow users to create and manage thei
 
 [![Website](https://img.shields.io/badge/website-live-brightgreen)](https://readit-blogs.netlify.app)
 [![Frontend Repo](https://img.shields.io/badge/frontend-repo-blue)](https://github.com/VrushabhVeer/Readit)
-[![Backend Repo](https://img.shields.io/badge/backend-repo-blue)](https://github.com/VrushabhVeer/Readit-backend)
+[![Backend Repo](https://img.shields.io/badge/backend-repo-blue)](https://github.com/VrushabhVeer/Readit-db)
 
 ## Technologies Used
 
