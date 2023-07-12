@@ -9,15 +9,26 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const CreateBlogs = () => {
+const Update = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [intro, setIntro] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const toast = useToast();
+  let navigate = useNavigate();
+  let id = localStorage.getItem("id");
+
+  useEffect(() => {
+    setTitle(localStorage.getItem("title"));
+    setImage(localStorage.getItem("image"));
+    setIntro(localStorage.getItem("intro"));
+    setDescription(localStorage.getItem("description"));
+    setDate(localStorage.getItem("date"));
+  }, []);
 
   const handleSubmit = () => {
     const payload = {
@@ -30,23 +41,24 @@ const CreateBlogs = () => {
     };
     console.log(payload);
 
-    const url = "https://sleepy-calf-panama-hat.cyclic.app/blogs/create";
+    const url = `https://sleepy-calf-panama-hat.cyclic.app/blogs/edit/${id}`;
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     };
 
     axios
-      .post(url, payload, { headers })
+      .patch(url, payload, { headers })
       .then((response) => {
         console.log(response.data);
 
         toast({
-          title: "Published",
+          title: "Updated",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
+        navigate("/myblogs");
       })
       .catch((error) => {
         console.error(error);
@@ -66,12 +78,13 @@ const CreateBlogs = () => {
         fontWeight="bold"
         fontSize={{ base: "30px", md: "40px" }}
       >
-        Create blog
+        Update blog
       </Text>
 
       <Box mt="8" w="100%">
         <Box>
           <Input
+            value={title}
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="add title"
@@ -81,6 +94,7 @@ const CreateBlogs = () => {
         </Box>
         <Box mt="5">
           <Input
+            value={image}
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="add image"
@@ -90,6 +104,7 @@ const CreateBlogs = () => {
         </Box>
         <Box mt="5">
           <Textarea
+            value={intro}
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="blog intro"
@@ -100,6 +115,7 @@ const CreateBlogs = () => {
         </Box>
         <Box mt="5">
           <Textarea
+            value={description}
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="your blog"
@@ -109,6 +125,7 @@ const CreateBlogs = () => {
         </Box>
         <Box mt="5">
           <Input
+            value={date}
             border="1px solid #cecece"
             _hover={{ border: "1px solid #cecece" }}
             placeholder="publish date"
@@ -137,11 +154,11 @@ const CreateBlogs = () => {
             title === "" || image === "" || intro === "" || description === ""
           }
         >
-          Publish
+          Update
         </Button>
       </Box>
     </Box>
   );
 };
 
-export default CreateBlogs;
+export default Update;

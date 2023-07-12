@@ -4,13 +4,8 @@
   font-family: "DM Sans", sans-serif;
 }
 
-.fa-user {
-  font-style: italic;
-  margin-right: 3px;
-}
-
 .it {
-  color: #ff725e;
+  color: #6dd28a;
 }
 
 .signup {
@@ -19,6 +14,10 @@
 
 .nav {
   z-index: 900;
+}
+
+.userName::first-letter {
+  text-transform: uppercase;
 }
 
 .description::first-letter {
@@ -134,4 +133,71 @@
 .button-27:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+/* button 24 */
+
+.button-24 {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  outline: 0;
+  padding: 8px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+.button-24:active {
+  opacity: 0.5;
+}
+
+/* button 25 */
+.button-25 {
+  background: #5ec4b8;
+  border: 1px solid #5ec4b8;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  outline: 0;
+  padding: 8px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-25:hover,
+.button-25:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #5ec4b8;
+}
+
+.button-25:active {
+  opacity: 0.5;
 }

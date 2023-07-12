@@ -1,7 +1,15 @@
-import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Input,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import blogging from "../assets/writing-pana.png";
+import blogging from "../assets/writing.png";
 import axios from "axios";
 
 const Home = () => {
@@ -25,7 +33,7 @@ const Home = () => {
   return (
     <>
       <Flex
-        w={{ base: "90%", md: "80%" }}
+        w={{ base: "90%", md: "85%" }}
         m="auto"
         mt={{ base: "8", md: "0" }}
         alignItems="center"
@@ -66,7 +74,7 @@ const Home = () => {
       </Flex>
 
       <Box
-        w={{ base: "90%", md: "80%" }}
+        w={{ base: "90%", md: "85%" }}
         m="auto"
         mt={{ base: "10", md: "20" }}
       >
@@ -75,77 +83,82 @@ const Home = () => {
           fontSize={{ base: "35px", md: "45px" }}
           fontWeight="bold"
         >
-          All Blogs
+          Read latest
         </Text>
+        <Text color="#71717a">
+          Read our latest blog collections, which write by our valuable users.
+        </Text>
+        <Link to="/blogs">
+          <Flex alignItems="center" gap="2" mt="5">
+            <Text fontSize="18px">See all articles</Text>
+            <Text fontSize="15px" mt="1">
+              <i className="fa-solid fa-arrow-right"></i>
+            </Text>
+          </Flex>
+        </Link>
 
-        {data.map(
-          (item, index) =>
-            index < 5 && (
-              <Flex
-                key={index}
-                w="100%"
-                mt="8"
-                flexDirection={{ base: "column", md: "row" }}
-                gap={{ base: "3", md: "10" }}
-              >
-                <Box w="100%">
-                  <Image src={item.image} alt="blogImg" loading="lazy" />
-                </Box>
+        <SimpleGrid mt="8" columns={[1, 1, 1, 2, 3]} spacing="40px">
+          {data.reverse().map(
+            (item, index) =>
+              index < 3 && (
+                <Box key={index}>
+                  <Box>
+                    <Image
+                      h="30vh"
+                      w="100%"
+                      objectFit="cover"
+                      src={item.image}
+                      alt="blogImg"
+                      loading="lazy"
+                    />
+                  </Box>
 
-                <Box w="100%">
-                  <Text
-                    fontWeight="bold"
-                    fontSize={{ base: "20px", md: "30px" }}
-                    color="#333d4a"
-                  >
-                    {item.title}
-                  </Text>
-                  <Text mt="4" color="grey">
-                    {item.intro}
-                  </Text>
-                  <Link to={`/blogs/${item._id}`}>
+                  <Box mt="3">
                     <Text
-                      mt="4"
-                      cursor="pointer"
-                      fontStyle="italic"
-                      color="grey"
-                      textDecoration="underline"
+                      fontWeight="bold"
+                      lineHeight="34px"
+                      fontSize={{ base: "20px", md: "25px" }}
+                      color="#333d4a"
                     >
-                      Read More
+                      {item.title}
                     </Text>
-                  </Link>
-                  <Flex
-                    mt="4"
-                    gap="5"
-                    fontStyle="italic"
-                    fontSize="14px"
-                    fontWeight="bold"
-                    color="grey"
-                  >
-                    <Box>
-                      <i className="fa-solid fa-user"></i> {item.userName}
-                    </Box>
-                    <Box>{item.date}</Box>
-                    <Box>
-                      <i className="fa-solid fa-comment"></i>
-                    </Box>
-                  </Flex>
+                    <Text
+                      mt="3"
+                      color="#71717a"
+                      w="100%"
+                      whiteSpace="nowrap"
+                      overflow="hidden"
+                      textOverflow="ellipsis"
+                    >
+                      {item.intro}
+                    </Text>
+
+                    <Link to={`/blogs/${item._id}`}>
+                      <Text
+                        fontSize="16px"
+                        mt="1"
+                        textDecoration="underline"
+                        color="#333d4a"
+                      >
+                        Read more
+                      </Text>
+                    </Link>
+                  </Box>
                 </Box>
-              </Flex>
-            )
-        )}
+              )
+          )}
+        </SimpleGrid>
       </Box>
 
       <Link to="/blogs">
-        <Text
-          textAlign="center"
-          color="#5222d0"
-          fontWeight="bold"
-          fontSize={{ base: "18px", md: "20px" }}
-          mt={{ base: "10", md: "20" }}
-        >
-          More Blogs <i className="fa-solid fa-angle-right"></i>
-        </Text>
+        <Flex alignItems="center" gap="2" mt="20" justifyContent="center">
+          <Text fontSize="18px" color="#333d4a">
+            See all articles
+          </Text>
+          <Text fontSize="15px" mt="1">
+            <i className="fa-solid fa-arrow-right"></i>
+          </Text>
+        </Flex>
       </Link>
 
       <Box bg="gray.100" w="100%" py="20" mt="10" textAlign="center">

@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Contact from "../pages/Contact";
 import AllBlogs from "../pages/AllBlogs";
 import SingleBlog from "../pages/SingleBlog";
+import Update from "../pages/Update";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +30,15 @@ const AllRoutes = () => {
         element={
           <PrivateRoutes>
             <CreateBlogs />
+          </PrivateRoutes>
+        }
+      />
+
+      <Route
+        path="/update"
+        element={
+          <PrivateRoutes>
+            <Update />
           </PrivateRoutes>
         }
       />

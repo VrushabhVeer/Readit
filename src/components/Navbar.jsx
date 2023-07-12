@@ -17,16 +17,15 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import user from "../assets/user.png";
+import user from "../assets/profile.png";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleLogout = () => {
-    localStorage.setItem("token", "");
-    localStorage.setItem("userName", "");
+    localStorage.clear();
   };
-  
+
   let userName = localStorage.getItem("userName");
 
   return (
@@ -101,7 +100,9 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <Center>
-                  <Text>{localStorage.getItem("userName") ? userName : "Username"}</Text>
+                  <Text className="userName">
+                    {localStorage.getItem("userName") ? userName : "Username"}
+                  </Text>
                 </Center>
                 <MenuDivider />
                 <Link to="/myblogs">

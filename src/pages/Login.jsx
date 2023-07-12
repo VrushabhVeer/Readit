@@ -37,6 +37,7 @@ const Login = () => {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userName", res.data.userName);
+        localStorage.setItem("userId", res.data.userId);
 
         toast({
           title: "Login Succesful",

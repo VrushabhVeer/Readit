@@ -5,6 +5,7 @@ import {
   Button,
   InputRightElement,
   InputGroup,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,6 +18,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleSignup = async () => {
     const data = {
@@ -30,10 +32,33 @@ const Signup = () => {
         "https://sleepy-calf-panama-hat.cyclic.app/user/signup",
         data
       );
-      navigate("/login");
-      console.log(response.msg);
+
+      if (response.data.msg === "Email already exists") {
+        toast({
+          title: response.data.msg,
+          description: "please try different email",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: response.data.msg,
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+        navigate("/login");
+      }
     } catch (error) {
       console.error(error);
+      toast({
+        title: "Signup failed!",
+        description: "please try again.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
     }
   };
 
