@@ -86,6 +86,7 @@ const Login = () => {
       >
         Login
       </Text>
+      <Text textAlign="center" color="#333d4a">Login to your Readit account.</Text>
 
       {token ? (
         <Alert status="warning" fontSize="15px" borderRadius="5" p="2" mt="5">

@@ -86,7 +86,7 @@ const Home = () => {
           Read latest
         </Text>
         <Text color="#71717a">
-          Read our latest blog collections, which write by our valuable users.
+          Read our latest blog collections, which are written by our valuable users.
         </Text>
         <Link to="/blogs">
           <Flex alignItems="center" gap="2" mt="5">

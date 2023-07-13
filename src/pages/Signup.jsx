@@ -77,6 +77,7 @@ const Signup = () => {
       >
         Signup
       </Text>
+      <Text textAlign="center" color="#333d4a">Share your thoughts and experiences.</Text>
 
       <Box mt="8">
         <Box>
