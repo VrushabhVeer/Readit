@@ -10,7 +10,7 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import axios from "axios";
 
@@ -18,6 +18,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const location = useLocation();
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -46,7 +47,8 @@ const Login = () => {
           isClosable: true,
         });
 
-        navigate("/");
+        const { from } = location.state || { from: { pathname: "/" } };
+        navigate(from);
       })
       .catch((error) => {
         console.error(error);
@@ -86,7 +88,9 @@ const Login = () => {
       >
         Login
       </Text>
-      <Text textAlign="center" color="#333d4a">Login to your Readit account.</Text>
+      <Text textAlign="center" color="#333d4a">
+        Login to your Readit account.
+      </Text>
 
       {token ? (
         <Alert status="warning" fontSize="15px" borderRadius="5" p="2" mt="5">

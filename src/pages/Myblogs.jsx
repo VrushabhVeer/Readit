@@ -183,7 +183,7 @@ const Myblogs = () => {
                   <AlertDialogOverlay>
                     <AlertDialogContent>
                       <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                        Delete Blog
+                        Confirm Delete
                       </AlertDialogHeader>
                       <AlertDialogCloseButton />
 

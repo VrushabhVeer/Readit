@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlogs = () => {
   const [title, setTitle] = useState("");
@@ -18,6 +19,7 @@ const CreateBlogs = () => {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     const payload = {
@@ -47,6 +49,8 @@ const CreateBlogs = () => {
           duration: 3000,
           isClosable: true,
         });
+
+        navigate("/myblogs");
       })
       .catch((error) => {
         console.error(error);
