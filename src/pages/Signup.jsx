@@ -29,7 +29,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://sleepy-calf-panama-hat.cyclic.app/user/signup",
+        "https://readit-db-production.up.railway.app/user/signup",
         data
       );
 
@@ -122,7 +122,7 @@ const Signup = () => {
           </InputGroup>
         </Box>
 
-        <Button class="button-27" role="button" onClick={handleSignup}>
+        <Button className="button-27" role="button" onClick={handleSignup}>
           Signup
         </Button>
 

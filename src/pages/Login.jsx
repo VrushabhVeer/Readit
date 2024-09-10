@@ -30,7 +30,7 @@ const Login = () => {
     console.log(payload);
 
     axios
-      .post("https://sleepy-calf-panama-hat.cyclic.app/user/login", payload, {
+      .post("https://readit-db-production.up.railway.app/user/login", payload, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -134,7 +134,7 @@ const Login = () => {
           </InputGroup>
         </Box>
 
-        <Button class="button-27" role="button" onClick={handleLogin}>
+        <Button className="button-27" role="button" onClick={handleLogin}>
           Login
         </Button>
 

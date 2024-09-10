@@ -41,7 +41,7 @@ const Update = () => {
     };
     console.log(payload);
 
-    const url = `https://sleepy-calf-panama-hat.cyclic.app/blogs/edit/${id}`;
+    const url = `https://readit-db-production.up.railway.app/blogs/edit/${id}`;
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,

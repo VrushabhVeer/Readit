@@ -32,7 +32,7 @@ const CreateBlogs = () => {
     };
     console.log(payload);
 
-    const url = "https://sleepy-calf-panama-hat.cyclic.app/blogs/create";
+    const url = "https://readit-db-production.up.railway.app/blogs/create";
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,

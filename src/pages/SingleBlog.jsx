@@ -12,7 +12,7 @@ const SingleBlog = () => {
 
   useEffect(() => {
     axios
-      .get(`https://sleepy-calf-panama-hat.cyclic.app/blogs/${params.blogId}`)
+      .get(`https://readit-db-production.up.railway.app/blogs/${params.blogId}`)
       .then((response) => {
         setData(response.data);
       })

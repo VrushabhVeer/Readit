@@ -32,7 +32,7 @@ const Myblogs = () => {
     let userId = localStorage.getItem("userId");
     axios
       .get(
-        `https://sleepy-calf-panama-hat.cyclic.app/blogs/myblogs/${userId}`,
+        `https://readit-db-production.up.railway.app/blogs/myblogs/${userId}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
@@ -159,13 +159,13 @@ const Myblogs = () => {
                 </Link>
 
                 <Flex mt="5" gap="7" color="#71717a" alignItems="center">
-                  <Button class="button-24" role="Button" onClick={onOpen}>
+                  <Button className="button-24" role="Button" onClick={onOpen}>
                     Delete
                   </Button>
 
                   <Link to="/update">
                     <Button
-                      class="button-25"
+                      className="button-25"
                       role="Button"
                       onClick={() => setData(item)}
                     >
@@ -201,7 +201,7 @@ const Myblogs = () => {
                           Cancel
                         </Button>
                         <Button
-                          class="button-24"
+                          className="button-24"
                           role="Button"
                           onClick={() => onDelete(item._id)}
                           ml={3}

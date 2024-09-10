@@ -19,7 +19,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://sleepy-calf-panama-hat.cyclic.app/blogs"
+          "https://readit-db-production.up.railway.app/blogs"
         );
         setData(response.data);
       } catch (error) {
